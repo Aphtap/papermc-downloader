@@ -1,9 +1,16 @@
 package main
 
 import (
-	"Aphtap/papermc-downloader/api"
+	paper "Aphtap/papermc-downloader/paper"
+	"fmt"
 )
 
 func main() {
-	api.Get("1.19", "81", "paper-1.19-81.jar")
+	latestVersion := paper.GetLatestVersion()
+	fmt.Println(latestVersion)
+	latestBuild := paper.GetLatestBuild(latestVersion)
+	fmt.Println(latestBuild)
+	name := paper.GetLatestDownload(latestVersion, latestBuild)
+	fmt.Println(name)
+	paper.Get(latestVersion, latestBuild, name)
 }
