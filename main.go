@@ -1,8 +1,9 @@
 package main
 
 import (
-	paper "Aphtap/papermc-downloader/paper"
 	"fmt"
+
+	"github.com/Aphtap/papermc-downloader/paper"
 )
 
 func main() {
